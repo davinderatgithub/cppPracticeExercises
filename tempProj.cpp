@@ -3,6 +3,7 @@
 
 #include "pch.h"
 #include "HashLinearProb.h"
+#include "LinkedHashing.h"
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -153,7 +154,7 @@ int main()
 //	result = count(l_str.begin(), l_str.end(), "qw");
 //	cout << result << endl;
 
-	HashMap *linear_hash_table = new HashMap();
+/*	HashMap *linear_hash_table = new HashMap();
 	for (size_t i = 0; i < 10; i++)
 		linear_hash_table->put(1, 10);
 	//for (size_t i = 0; i < 10; i++)
@@ -161,6 +162,19 @@ int main()
 	cout << endl;
 	for (size_t i = 0; i < 10; i++)
 		cout << "key: " << i << "--> value: " << linear_hash_table->get(i) <<endl;
+*/
+	LinkedHashMap *linked_hash_table = new LinkedHashMap();
+	for (size_t i = 0; i < 10; i++)
+	{
+		linked_hash_table->put(i, i * 10);
+		linked_hash_table->put(i, i * 100);
+	}
+	cout << endl;
+	for (size_t i = 0; i < 10; i++)
+	{
+		cout << "Key: " << i << "--> Value: " << linked_hash_table->get(i) << endl;
+	}
+
 
 }
 
